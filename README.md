@@ -20,3 +20,22 @@ This is read as constant pointer to constant char. In tis case both value and va
 Purpose of pointer to pointer:
 https://stackoverflow.com/questions/20281669/why-and-when-is-a-double-pointer-required
 https://stackoverflow.com/questions/20281669/why-and-when-is-a-double-pointer-required
+
+Function pointers
+// fun_ptr is a pointer to function fun() 
+    void (*fun_ptr)(int) = &fun;
+  
+    /* The above line is equivalent of following two
+       void (*fun_ptr)(int);
+       fun_ptr = &fun; 
+    */
+  
+    // Invoking fun() using fun_ptr
+    (*fun_ptr)(10);
+    
+    
+     void (*fun_ptr)(int) = fun;  // & removed
+  
+    fun_ptr(10);  // * removed 
+    see
+    https://www.geeksforgeeks.org/function-pointer-in-c/
